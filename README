@@ -1,0 +1,37 @@
+There are three files which are required to run the code.
+
+1. app.js , a javascript file for server, which creates the connection at port 3000.
+	This node js file contains operations for the user request, and creates the connection to local mongoDB Database.
+	Also add the records, of user to the database.
+
+2. index.html , This file contains the code for the front end, where user can provide the inputs like: Name, Phone Number,
+	email, Job Title and can upload the Resume.
+
+3. signup_success.html, file to display message after data being successfully added to the mongoDB Database.
+
+Note: All client side validations has been taken care, 
+	1.Name should be text.
+	2.All fields are required.
+	3.Email id validation.
+	4.Phone number be in number.
+
+
+
+How to Run the code:
+
+Keep the directory structure:
+
+-public
+	-index.html
+	-signup_success.html
+	-style.css
+-uploads (the folder where files will be uploaded locally)
+-app.js
+
+Open Cmd-
+Go to project path.
+1.hit command node app.js
+	server will  start
+2.start mongoDB server	
+3. go to web browser: hit localhost:3000 //port is configurable.
+4.input the data you want to insert to database, click on submit.
