@@ -3,6 +3,7 @@ var bodyParser=require("body-parser");
 var fs = require('fs');
 const multer = require('multer');
 
+//Database Connectivity.
 const mongoose = require('mongoose'); 
 mongoose.connect('mongodb://localhost:27017/user'); 
 var db=mongoose.connection; 
@@ -19,15 +20,13 @@ app.use(bodyParser.urlencoded({
 	extended: true
 })); 
 
-
+//Calling the index.html after hitting the server.
 app.get('/',function(req,res){ 
 res.set({ 
 	'Access-control-Allow-Origin': '*'
 	}); 
-//return res.redirect('index.html'); 
  res.sendFile(__dirname + './public/index.html');
 }).listen(3000) 
-
 
 
 //Storage Setting
@@ -43,6 +42,8 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
+
+//Handling post request, adding the data as object to mongoDB.
 
 app.post('/uploadfile',upload.single('myFile'), function(req,res,next){ 
 
@@ -68,18 +69,17 @@ app.post('/uploadfile',upload.single('myFile'), function(req,res,next){
 		"phone":phone, 
 		"myFile":file
 	} 
-	//res.json(data);
+	//we can also print data which is being added to DB using below commented line.
+	//res.json(data); 
 db.collection('details').insertOne(data,function(err, collection){ 
 		if (err) throw err; 
 		console.log("Record inserted Successfully"); 
 			
 	}); 
 		
+	//Calling the html file for success message.
 	return res.redirect('signup_success.html'); 
 }) 
-
-
-
 
 
 console.log("server listening at port 3000"); 
