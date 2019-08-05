@@ -67,8 +67,8 @@ res.set({
 //index.html is present in root directoty and then inside the parent directory
  res.sendFile(__dirname + './public/index.html');
 
- res.cookie("userData", users); 
- res.send(req.cookies);
+ //res.cookie("userData", users); 
+ //res.send(req.cookies);
 
 }).listen(process.env.PORT) 
 
