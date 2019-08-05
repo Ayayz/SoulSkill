@@ -34,8 +34,8 @@ app.use(function (req, res, next) {
   {
     // no: set a new cookie on client machine
     //set cookie value to 1 as this is first visit of user.
-    var randomNumber=1;
-    res.cookie('cookieName',randomNumber, { maxAge: 900000, httpOnly: true });
+    integer=1;
+    res.cookie('cookieName',integer, { maxAge: 900000, httpOnly: true });
     console.log('cookie created successfully');
   } 
   else
