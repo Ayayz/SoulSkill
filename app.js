@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 })); 
 
+var integer = 1;
 
 //Cookie Management.
 app.use(function (req, res, next) {
@@ -42,7 +43,7 @@ app.use(function (req, res, next) {
     // yes, cookie was already present 
     var cnt = req.cookies.cookieName;
     //convert count to Number and incraese it by 1.
-    var integer = Number(cnt);
+    integer = Number(cnt);
     integer+=1;
     //console.log('inter:',integer);
     res.cookie('cookieName',integer, { maxAge: 900000, httpOnly: true });
@@ -122,7 +123,10 @@ db.collection('details').insertOne(data,function(err, collection){
 	}); 
 		
 	//Calling the html file for success message.
-	return res.redirect('signup_success.html'); 
+	//return res.redirect('signup_success.html'); 
+	//return res.redirect('signup_success.html', {integer:integer});
+	 res.send("Data inserted to database successfully!\n Your Website Visit Count is:"+integer)
+	// res.send("Your visit count"+integer);
 }) 
 
 
