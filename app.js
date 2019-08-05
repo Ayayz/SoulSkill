@@ -5,7 +5,9 @@ const multer = require('multer');
 
 //Database Connectivity.
 const mongoose = require('mongoose'); 
-mongoose.connect('mongodb://localhost:27017/user'); 
+//mongoose.connect('mongodb://localhost:27017/user');  
+mongoose.connect('mongodb+srv://ayyaz:ayyaz@cluster0-rtzsv.mongodb.net/test?retryWrites=true&w=majority');
+
 var db=mongoose.connection; 
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
