@@ -3,7 +3,7 @@ var bodyParser=require("body-parser");
 var fs = require('fs');
 const multer = require('multer');
 let cookieParser = require('cookie-parser');
-const alert=require('alert-node');
+//const alert=require('alert-node');
 
 //Database Connectivity.
 const mongoose = require('mongoose'); 
@@ -49,7 +49,7 @@ app.use(function (req, res, next) {
 
     console.log('cookie exists', integer);
     //Display alert box as total number of visits of user to website.
-    alert("Total Website count by You:"+integer);
+   // alert("Total Website count by You:"+integer);
  
   } 
   //after setting the cookie, continue the execution.
