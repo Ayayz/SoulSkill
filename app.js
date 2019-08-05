@@ -26,7 +26,7 @@ res.set({
 	'Access-control-Allow-Origin': '*'
 	}); 
  res.sendFile(__dirname + './public/index.html');
-}).listen(3000) 
+}).listen(process.env.PORT) 
 
 
 //Storage Setting
