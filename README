@@ -33,5 +33,5 @@ Go to project path.
 1.hit command node app.js
 	server will  start
 2.start mongoDB server	
-3. go to web browser: hit localhost:3000 //port is configurable.
+3. go to web browser: hit https://quiet-dawn-77549.herokuapp.com/ 
 4.input the data you want to insert to database, click on submit.
